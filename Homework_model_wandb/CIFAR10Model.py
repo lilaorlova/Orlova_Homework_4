@@ -30,21 +30,6 @@ class CIFAR10Model(L.LightningModule):
         loss = F.cross_entropy(self(x), y)
         return loss
 
-    """def test_step(self, batch: Tuple[torch.Tensor, torch.Tensor], batch_nb: int):
-        x, y = batch
-        logits = self(x)
-        loss = F.nll_loss(logits, y)
-        
-        # validation metrics
-        preds = torch.argmax(logits, dim=1)
-        acc = self.accuracy(preds, y)
-        self.log('test_loss', loss, prog_bar=True)
-        self.log('test_acc', acc, prog_bar=True)
-        return loss
-
-        x, y = batch
-        loss = F.cross_entropy(self(x), y)
-        return loss"""
         
     def test_step(self, batch: Tuple[torch.Tensor, torch.Tensor], batch_nb: int) -> torch.Tensor:
         return self.training_step(batch=batch, batch_nb=batch_nb)
