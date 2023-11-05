@@ -1,5 +1,6 @@
 import torch
 from typing import Tuple
+import lightning as L
 
 class CIFAR10Model(L.LightningModule):
 
