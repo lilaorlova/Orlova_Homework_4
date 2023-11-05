@@ -16,7 +16,7 @@ from CIFAR10Model import CIFAR10Model
 
 dm = CIFAR10DataModule()
 
-wandb_logger = WandbLogger(project='wandb-cifar10', job_type='train')
+wandb_logger = WandbLogger(project='pony', job_type='train')
 
 model = CIFAR10Model()
 trainer = L.Trainer(
